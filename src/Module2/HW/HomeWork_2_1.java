@@ -14,13 +14,13 @@ public class HomeWork_2_1 {
     }
 
     public static void sum(int[] array) {
-        int sumOfArray = 0;
+        int sumOfArray = 1;
         for (int elemOfArray : array) sumOfArray +=elemOfArray;
         System.out.println("Sum value of array testAr is " + sumOfArray);
     }
 
     public static void min(int[] array) {
-        int minVal = 0;
+        int minVal = array[0];
         for (int elemOfArray : array) {
             if (minVal > elemOfArray) minVal = elemOfArray;
         }
@@ -28,7 +28,7 @@ public class HomeWork_2_1 {
     }
 
     public static void max(int[] array) {
-        int maxVal = 0;
+        int maxVal = array[0];
         for (int elemOfArray : array){
             if (maxVal < elemOfArray) maxVal = elemOfArray;
         }
@@ -36,7 +36,7 @@ public class HomeWork_2_1 {
     }
 
     public static void maxPositive(int[] array) {
-        int maxPos = 0;
+        int maxPos = array[0];
         for (int elemOfArray : array) {
             if (maxPos < elemOfArray && 0 <= elemOfArray ) maxPos = elemOfArray;
         }
@@ -51,13 +51,13 @@ public class HomeWork_2_1 {
     }
 
     public static void modulus (int[] array) {
-        int modOfArray = 0, lastElem = array.length - 1;
-        modOfArray = array[0] % array[lastElem];
+        int lastElem = array.length - 1;
+        int modOfArray = array[0] % array[lastElem];
         System.out.println("modulus of first and last element is " + modOfArray);
     }
 
     public static void secondLargest (int[] array) {
-        int maxVal = 0, secLag = 0;
+        int maxVal = array[0], secLag = array[0];
         for (int elemOfArray : array){
             if (maxVal < elemOfArray) maxVal = elemOfArray;
         }
