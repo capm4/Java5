@@ -14,7 +14,7 @@ public class HomeWork_2_1 {
     }
 
     public static void sum(int[] array) {
-        int sumOfArray = 1;
+        int sumOfArray = 0;
         for (int elemOfArray : array) sumOfArray +=elemOfArray;
         System.out.println("Sum value of array testAr is " + sumOfArray);
     }
