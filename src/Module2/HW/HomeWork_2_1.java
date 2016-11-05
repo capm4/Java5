@@ -44,9 +44,8 @@ public class HomeWork_2_1 {
     }
 
     public static void multiplication (int[] array) {
-        int multOfArray = 1, negative = -1;
+        int multOfArray = 1;
         for (int elemOfArray : array) multOfArray *=elemOfArray;
-        if (multOfArray < 0) multOfArray *=negative;
         System.out.println("Multiplication value of array testAr is " + multOfArray);
     }
 
