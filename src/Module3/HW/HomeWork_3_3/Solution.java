@@ -21,7 +21,5 @@ public class Solution {
         SpecialStudent SpecialStudent2 = new SpecialStudent(new Course[1], 19);
         SpecialStudent SpecialStudent3 = new SpecialStudent("Vadum", "Lozik", 27, new Course[5], 17, "KNEU", 5, 1, 12344321);
 
-
-
     }
 }
