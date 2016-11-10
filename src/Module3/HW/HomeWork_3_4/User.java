@@ -8,17 +8,18 @@ public class User {
     private int salary;
     private String currency;
 
-    public int paySalary(){
-        return balance +=salary;
+    public void paySalary(){
+        balance +=salary;
     }
     public long withdraw (int summ){
         Double comision;
-        if (summ <= 100) comision = summ * 0.05;
+        if (summ <= 1000) comision = summ * 0.05;
         else comision = summ * 0.1;
-        return Math.round(comision);
+        balance -= summ + Math.round(comision);
+        return balance;
     }
     public int companyNameLength(){
-        return companyName.toCharArray().length ;
+        return companyName.length() ;
     }
     public int monthIncreaser(int addMonth){
         return monthOfEmployment += addMonth;
