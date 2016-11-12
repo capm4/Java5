@@ -15,7 +15,6 @@ public class Student {
     }
 
     public Student (Course[] courseTaken, int age) {
-        this.courseTaken = courseTaken;
         this.age = age;
     }
 
@@ -23,7 +22,6 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.group = group;
-        this.courseTaken = courseTaken;
         this.age = age;
     }
 

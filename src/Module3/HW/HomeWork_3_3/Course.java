@@ -13,8 +13,9 @@ public class Course {
         this.name = name;
     }
 
-    public Course(int hoursDuration, String teacherName) {
+    public Course(int hoursDuration,String name, String teacherName) {
         this.hoursDuration = hoursDuration;
+        this.name = name;
         this.teacherName = teacherName;
     }
 

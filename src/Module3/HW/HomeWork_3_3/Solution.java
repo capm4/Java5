@@ -7,8 +7,8 @@ public class Solution {
         Course course1 = new Course(new Date(99, 2, 18), "Alex");
         Course course2 = new Course(new Date(2000, 3, 18), "Olga");
         Course course3 = new Course(new Date(2001, 4, 18), "Elvira");
-        Course course4 = new Course(11210, "Bulba");
-        Course course5 = new Course(10, "Bulba");
+        Course course4 = new Course(11210,"Alex", "Bulba");
+        Course course5 = new Course(10,"Olga" ,"Bulba");
 
         Student student1 = new Student("Alex", "Kruglov", 2);
         Student student2 = new Student(new Course[2], 23);
