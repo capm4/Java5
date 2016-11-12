@@ -11,15 +11,15 @@ public class Solution {
         Course course5 = new Course(10,"Olga" ,"Bulba");
 
         Student student1 = new Student("Alex", "Kruglov", 2);
-        Student student2 = new Student(new Course[2], 23);
+        Student student2 = new Student("Kruglov", new String[]{"Math", "Geography", "Physics"});
 
         CollegeStugent collegeStugent1 = new CollegeStugent("Andew", "Nort", 14);
-        CollegeStugent collegeStugent2 = new CollegeStugent(new Course[3], 12);
-        CollegeStugent collegeStugent3 = new CollegeStugent("Andew", "Nort", 14, new Course[4], 16, "NULP", 4, 1);
+        CollegeStugent collegeStugent2 = new CollegeStugent("Kruglov", new String[]{"Math", "Geography", "Physics"});
+        CollegeStugent collegeStugent3 = new CollegeStugent("Andew", "Nort", 14,new String[]{"Math", "Geography", "Physics"},22,"LNUN",12,1990999);
 
         SpecialStudent SpecialStudent1 = new SpecialStudent("Oleg", "Blog", 4);
-        SpecialStudent SpecialStudent2 = new SpecialStudent(new Course[1], 19);
-        SpecialStudent SpecialStudent3 = new SpecialStudent("Vadum", "Lozik", 27, new Course[5], 17, "KNEU", 5, 1, 12344321);
+        SpecialStudent SpecialStudent2 = new SpecialStudent("Kruglov", new String[]{"Math", "Geography", "Physics"});
+        SpecialStudent SpecialStudent3 = new SpecialStudent("Vadum", "Lozik", 27, new String[]{"Math", "Geography", "Physics"}, 17, "KNEU", 5, 1, 12344321);
 
     }
 }

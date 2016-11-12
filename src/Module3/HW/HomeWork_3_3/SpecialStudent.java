@@ -10,15 +10,14 @@ public class SpecialStudent extends CollegeStugent {
         super(firstName, lastName, group);
     }
 
-    public SpecialStudent(Course[] courseTaken, int age) {
-        super(courseTaken, age);
+    public SpecialStudent(String lastName, String[] courses) {
+        super(lastName, courses);
     }
 
-    public SpecialStudent(String firstName, String lastName, int group, Course[] courseTaken, int age, String collegeName, int rating, long id, long secretKey) {
-        super(firstName, lastName, group, courseTaken, age, collegeName, rating, id);
+    public SpecialStudent(String firstName, String lastName, int group, String[] courses, int age, String collegeName, int rating, long id, long secretKey) {
+        super(firstName, lastName, group, courses, age, collegeName, rating, id);
         this.secretKey = secretKey;
     }
-
 
     public long getSecretKey() {
         return secretKey;
