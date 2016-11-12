@@ -5,7 +5,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private int group;
-    private Course[] courseTaken;
+    private Course[] courseTaken = new Course[3];
     private int age;
 
     public Student(String firstName, String lastName, int group) {
@@ -14,16 +14,16 @@ public class Student {
         this.group = group;
     }
 
-    public Student(String lastName,String[] courses) {
+    public Student(String lastName,Course[] courses) {
         this.lastName = lastName;
-        System.arraycopy(courses,courses.length,courseTaken,0,courses.length);
+        System.arraycopy(courses,0,courseTaken,0,3);
     }
 
-    public Student(String firstName, String lastName, int group, String[] courses, int age) {
+    public Student(String firstName, String lastName, int group, Course[] courses, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.group = group;
-        System.arraycopy(courses,courses.length,courseTaken,0,courses.length);
+        System.arraycopy(courses,0,courseTaken,0,3);
         this.age = age;
     }
 

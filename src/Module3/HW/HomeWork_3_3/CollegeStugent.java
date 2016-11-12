@@ -11,11 +11,11 @@ public class CollegeStugent extends Student {
         super(firstName, lastName, group);
     }
 
-    public CollegeStugent(String lastName, String[] courses) {
+    public CollegeStugent(String lastName, Course[] courses) {
         super(lastName, courses);
     }
 
-    public CollegeStugent(String firstName, String lastName, int group, String[] courses, int age, String collegeName, int rating, long id) {
+    public CollegeStugent(String firstName, String lastName, int group, Course[] courses, int age, String collegeName, int rating, long id) {
         super(firstName, lastName, group, courses, age);
         this.collegeName = collegeName;
         this.rating = rating;
