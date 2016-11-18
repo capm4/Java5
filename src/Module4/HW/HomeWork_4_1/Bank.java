@@ -5,13 +5,13 @@ import Module4.HW.HomeWork_4_2.Currency;
 
 
 public abstract class Bank {
-    long id;
-    String bankCountry;
-    Currency currency;
-    int numberOfEmployee;
-    double avrSalaryOfEmployee;
-    long rating;
-    long totalCapital;
+    protected long id;
+    protected String bankCountry;
+    protected Currency currency;
+    protected int numberOfEmployee;
+    protected double avrSalaryOfEmployee;
+    protected long rating;
+    protected long totalCapital;
 
     public abstract int getLimitOfWithdrawal();
     public abstract int getLimitOfFunding();
