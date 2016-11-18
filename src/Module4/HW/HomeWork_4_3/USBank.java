@@ -20,7 +20,7 @@ public class USBank extends Bank {
 
     @Override
     public int getLimitOfWithdrawal() {
-        switch (USBank.this.getCurrency().toString()){
+        switch (getCurrency().toString()){
             case "USA":limitOfWithdrawal = 1000;
                 break;
             case "EUR": limitOfWithdrawal = 1200;
@@ -33,7 +33,7 @@ public class USBank extends Bank {
 
     @Override
     public int getLimitOfFunding() {
-        switch (USBank.this.getCurrency().toString()){
+        switch (getCurrency().toString()){
             case "USA":limitOfFunding = Integer.MAX_VALUE;
                 break;
             case "EUR": limitOfFunding = 10000;
@@ -46,7 +46,7 @@ public class USBank extends Bank {
 
     @Override
     public int getMonthlyRate() {
-        switch (USBank.this.getCurrency().toString()){
+        switch (getCurrency().toString()){
             case "USA":monthlyRate = 1;
                 break;
             case "EUR": monthlyRate = 2;
@@ -59,10 +59,10 @@ public class USBank extends Bank {
 
     @Override
     public int getCommission(int summ) {
-            if (USBank.this.getCurrency().toString()=="USA" && summ <= 1000)commision = 5;
-            else if (USBank.this.getCurrency().toString()=="USA" && summ > 1000)commision = 7;
-            else if (USBank.this.getCurrency().toString()=="EUR" && summ <= 1000)commision = 7;
-            else if (USBank.this.getCurrency().toString()=="EUR" && summ > 1000)commision = 8;
+            if (getCurrency().toString()=="USA" && summ <= 1000)commision = 5;
+            else if (getCurrency().toString()=="USA" && summ > 1000)commision = 7;
+            else if (getCurrency().toString()=="EUR" && summ <= 1000)commision = 7;
+            else if (getCurrency().toString()=="EUR" && summ > 1000)commision = 8;
         return commision;
     }
 
