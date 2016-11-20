@@ -57,10 +57,10 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getCommission(int summ) {
-        if (getCurrency().toString()=="USA" && summ <= 1000)commision = 3;
-        else if (getCurrency().toString()=="USA" && summ > 1000)commision = 5;
-        else if (getCurrency().toString()=="EUR" && summ <= 1000)commision = 10;
-        else if (getCurrency().toString()=="EUR" && summ > 1000)commision = 11;
+        if (getCurrency().toString().equals("USA") && summ <= 1000)commision = 3;
+        else if (getCurrency().toString().equals("USA") && summ > 1000)commision = 5;
+        else if (getCurrency().toString().equals("EUR") && summ <= 1000)commision = 10;
+        else if (getCurrency().toString().equals("EUR") && summ > 1000)commision = 11;
         return commision;
     }
 
