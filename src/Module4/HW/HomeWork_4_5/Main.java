@@ -4,6 +4,8 @@ package Module4.HW.HomeWork_4_5;
 import Module4.HW.HomeWork_4_3.ChinaBank;
 import Module4.HW.HomeWork_4_3.EUBank;
 import Module4.HW.HomeWork_4_3.USBank;
+import Module4.HW.HomeWork_4_4.BankSystemImpl;
+import Module4.HW.HomeWork_4_4.User;
 
 import static Module4.HW.HomeWork_4_2.Currency.*;
 
@@ -21,5 +23,11 @@ public class Main {
 
         System.out.println(USBank1.getLimitOfWithdrawal());
         System.out.println(ChinaBank2.getLimitOfFunding());
+        System.out.println(EUBank1.getCommission(120));
+        User user = new User (1000, 4000);
+        BankSystemImpl bS = new BankSystemImpl();
+        System.out.println(user.getBalance());
+        bS.withdrawOfUser(user, 100);
+        System.out.println(user.getBalance());
     }
 }
