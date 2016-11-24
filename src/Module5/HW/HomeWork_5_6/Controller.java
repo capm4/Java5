@@ -1,6 +1,7 @@
 package Module5.HW.HomeWork_5_6;
 
 
+import Module5.HW.HomeWork_5_1.Room;
 import Module5.HW.HomeWork_5_3.API;
 import Module5.HW.HomeWork_5_4.BookingComAPI;
 import Module5.HW.HomeWork_5_4.GoogleAPI;
@@ -12,10 +13,15 @@ public class Controller {
 
     public Controller(API[] apis) {
         this.apis[0] = new TripAdvisorAPI();
-        API api1 = this.apis[0];
         this.apis[1] = new GoogleAPI();
-        API api2 = this.apis[1];
         this.apis[2] = new BookingComAPI();
-        API api3 = this.apis[2];
+    }
+
+    Room[] requstRooms(int price, int persons, String city, String hotel) {
+        return new Room[0];
+    }
+
+    Room[] check(API api1, API api2) {
+        return new Room[0];
     }
 }
