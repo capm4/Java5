@@ -22,7 +22,7 @@ public class Controller {
         for (API apisArray : apis) {
             count += apisArray.findRooms(price,persons,city,hotel).length;
         }
-        Room[] requsRooms = new Room[2];
+        Room[] requsRooms = new Room[count];
         int i = 0;
         for (API apisArray : apis) {
             for(Room seargRoom : apisArray.findRooms(price,persons,city,hotel))
