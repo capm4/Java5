@@ -8,35 +8,45 @@ import Module5.HW.HomeWork_5_4.GoogleAPI;
 import Module5.HW.HomeWork_5_4.TripAdvisorAPI;
 import Module5.HW.HomeWork_5_5.DAOImpl;
 
+import java.util.Arrays;
+
 public class Controller {
-    private API[] apis = new API[3];
-    private Room[] findR;
-    private Room[] checkR;
-
-
-    public Controller(API[] apis) {
-        this.apis[0] = new TripAdvisorAPI();
-        this.apis[1] = new GoogleAPI();
-        this.apis[2] = new BookingComAPI();
-    }
-
-    public Controller() {
-    }
+    private API[] apis = {new TripAdvisorAPI(),new GoogleAPI(),new BookingComAPI()};
+    DAOImpl Dao = new DAOImpl();
 
     public Room[] requstRooms(int price, int persons, String city, String hotel) {
-        Room fRoom = new Room(price, persons, city, hotel);
-        int elemOfArrayOfFindRoom = 0;
-        for (int elemOfArray = 0; elemOfArray < apis.length; elemOfArray++) {
-            if (apis[elemOfArray].equals(fRoom)) {
-                findR[elemOfArrayOfFindRoom] = (Room) apis[elemOfArray];
-                elemOfArrayOfFindRoom++;
-            }
+        int count = 0;
+        for (API apisArray : apis) {
+            count += apisArray.findRooms(price,persons,city,hotel).length;
         }
-        return new Room[elemOfArrayOfFindRoom];
+        Room[] requsRooms = new Room[count];
+        int i = 0;
+        for (API apisArray : apis) {
+            for(Room seargRoom : apisArray.findRooms(price,persons,city,hotel))
+                requsRooms[i] = seargRoom;
+            i++;
+        }
+        return requsRooms;
     }
 
-    Room[] check(API api1, API api2) {
-        return new Room[0];
+    Room[] check(API api1, API api2){
+        int count = 0;
+        for (int i = 0; i < api1.getRooms().length ; i++) {
+            for (int j = 0; j < api1.getRooms().length; j++) {
+                if(api1.getRooms()[i].equals(api2.getRooms()[j])){
+                    count++;
+                }
+            }
+        }
+        int index = 0;
+        Room[] checkRooms = new Room[count];
+        for (Room seargRoom : api1.getRooms()){
+            if (seargRoom.equals(api2.getRooms()[index])){
+                checkRooms[index] = seargRoom;
+                index++;
+            }
+        }
+        return checkRooms;
     }
 
 }

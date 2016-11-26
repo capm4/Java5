@@ -10,9 +10,12 @@ import Module5.HW.HomeWork_5_6.Controller;
 
 public class main {
    public static void main(String[] args) {
-        Controller con = new Controller();
-       //System.out.println(con.requstRooms(1,600, "Universe", "Horlivka"));
-       System.out.println(con.getQ().getRooms());
+       Controller controller = new Controller();
 
-    }
+       //System.out.println(room.getHotelName());
+       for(Room room : controller.requstRooms(250,21, "Lux", "lviv")){
+          // System.out.println(room.getPersons());
+           System.out.println("doog");
+       }
+   }
 }

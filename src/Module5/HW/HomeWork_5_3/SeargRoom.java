@@ -2,19 +2,27 @@ package Module5.HW.HomeWork_5_3;
 
 import Module5.HW.HomeWork_5_1.Room;
 
-public abstract class SeargRoom {
+import java.lang.reflect.Array;
+
+public abstract class SeargRoom implements API{
 
     private Room[] rooms;
-    private Room findRooms;
 
-    public Room findRooms(int price, int persons, String city, String hotel){
-        Room newRoom = new Room (price,persons,city,hotel);
-        int elemOfArrayOfFindRoom = 0;
-        for (int elemOfArray = 0; elemOfArray < rooms.length ; elemOfArray++){
-            if (rooms[elemOfArray].equals(newRoom)){
-                findRooms = rooms[elemOfArray];
+    @Override
+    public Room[] findRooms(int price, int persons, String city, String hotel){
+        int count = 0;
+        for (Room seargRooms : getRooms()) {
+            if (seargRooms.getPrice() == price && seargRooms.getPersons() == persons && seargRooms.getCityName() == city && seargRooms.getHotelName()== hotel)
+               count++;
+        }
+
+        Room[] findRoom = new Room[count];
+        int index = 0;
+        for (Room seargRoom : getRooms()) {
+            if (seargRoom.getPrice() == price && seargRoom.getPersons() == persons && seargRoom.getCityName() == city && seargRoom.getHotelName()==hotel) {
+                findRoom[index] = seargRoom;
             }
         }
-        return findRooms;
+        return findRoom;
     }
 }
