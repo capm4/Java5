@@ -14,7 +14,7 @@ public class main {
 
        //System.out.println(room.getHotelName());
        for(Room room : controller.requstRooms(250,21, "Lux", "lviv")){
-          // System.out.println(room.getPersons());
+           System.out.println(room.getPersons());
            System.out.println("doog");
        }
    }

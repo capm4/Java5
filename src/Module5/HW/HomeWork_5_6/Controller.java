@@ -14,12 +14,15 @@ public class Controller {
     private API[] apis = {new TripAdvisorAPI(),new GoogleAPI(),new BookingComAPI()};
     DAOImpl Dao = new DAOImpl();
 
+    public Controller() {
+    }
+
     public Room[] requstRooms(int price, int persons, String city, String hotel) {
         int count = 0;
         for (API apisArray : apis) {
             count += apisArray.findRooms(price,persons,city,hotel).length;
         }
-        Room[] requsRooms = new Room[count];
+        Room[] requsRooms = new Room[2];
         int i = 0;
         for (API apisArray : apis) {
             for(Room seargRoom : apisArray.findRooms(price,persons,city,hotel))
@@ -28,6 +31,8 @@ public class Controller {
         }
         return requsRooms;
     }
+
+
 
     Room[] check(API api1, API api2){
         int count = 0;
