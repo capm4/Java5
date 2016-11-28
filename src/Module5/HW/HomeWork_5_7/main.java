@@ -8,14 +8,15 @@ import Module5.HW.HomeWork_5_4.GoogleAPI;
 import Module5.HW.HomeWork_5_4.TripAdvisorAPI;
 import Module5.HW.HomeWork_5_6.Controller;
 
+import java.util.Date;
+
 public class main {
    public static void main(String[] args) {
        Controller controller = new Controller();
-
-       //System.out.println(room.getHotelName());
-       for(Room room : controller.requstRooms(250,21, "Lux", "lviv")){
-           System.out.println(room.getPersons());
-           System.out.println("doog");
+       Room roomForTest = new Room(1,300,22,new Date(),"Tur", "Khmelnutskiy");
+       controller.requstRooms(250,21, "Lux", "lviv");
+       controller.getDao().save(roomForTest);
+       controller.getDao().delete(roomForTest);
        }
    }
 }
