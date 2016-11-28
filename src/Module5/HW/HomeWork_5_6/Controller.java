@@ -6,23 +6,27 @@ import Module5.HW.HomeWork_5_3.API;
 import Module5.HW.HomeWork_5_4.BookingComAPI;
 import Module5.HW.HomeWork_5_4.GoogleAPI;
 import Module5.HW.HomeWork_5_4.TripAdvisorAPI;
+import Module5.HW.HomeWork_5_5.DAO;
 import Module5.HW.HomeWork_5_5.DAOImpl;
 
-import java.util.Arrays;
 
 public class Controller {
     private API[] apis = {new TripAdvisorAPI(),new GoogleAPI(),new BookingComAPI()};
-    DAOImpl Dao = new DAOImpl();
+    DAO dao = new DAOImpl();
+
+    public DAO getDao() {
+        return dao;
+    }
 
     public Controller() {
     }
 
-    public Room[] requstRooms(int price, int persons, String city, String hotel) {
+    public Room[] requstRooms(int price, int persons, String hotel, String city) {
         int count = 0;
         for (API apisArray : apis) {
             count += apisArray.findRooms(price,persons,city,hotel).length;
         }
-        Room[] requsRooms = new Room[2];
+        Room[] requsRooms = new Room[count];
         int i = 0;
         for (API apisArray : apis) {
             for(Room seargRoom : apisArray.findRooms(price,persons,city,hotel))
@@ -54,4 +58,7 @@ public class Controller {
         return checkRooms;
     }
 
+    public API[] getApis() {
+        return apis;
+    }
 }

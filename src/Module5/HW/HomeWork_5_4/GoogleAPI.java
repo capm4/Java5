@@ -13,7 +13,7 @@ public class GoogleAPI extends SeargRoom implements API {
     public GoogleAPI() {
         this.rooms[0] = new Room(6, 1200,1,new Date(), "Luk", "London");
         this.rooms[1] = new Room(7, 900,10,new Date(),  "Mazep", "NY");
-        this.rooms[2] = new Room(8, 12001,12,new Date(), "jek", "LA");
+        this.rooms[2] = new Room(8,300,22,new Date(),"Tur", "Khmelnutskiy");
         this.rooms[3] = new Room(9, 100,13,new Date(), "Marine", "Parish");
         this.rooms[4] = new Room(10, 1000,11,new Date(), "Rock", "Kiyv");
     }

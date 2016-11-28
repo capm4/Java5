@@ -13,7 +13,7 @@ public abstract class SeargRoom implements API{
         int count = 0;
         for (Room seargRooms : getRooms()) {
             if (seargRooms.getPrice() == price && seargRooms.getPersons() == persons && seargRooms.getCityName() == city && seargRooms.getHotelName()== hotel)
-               count++;
+                count++;
         }
 
         Room[] findRoom = new Room[count];
