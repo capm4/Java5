@@ -38,10 +38,10 @@ public class Controller {
 
 
 
-    Room[] check(API api1, API api2){
+    public Room[] check(API api1, API api2){
         int count = 0;
         for (int i = 0; i < api1.getRooms().length ; i++) {
-            for (int j = 0; j < api1.getRooms().length; j++) {
+            for (int j = 0; j < api2.getRooms().length; j++) {
                 if(api1.getRooms()[i].equals(api2.getRooms()[j])){
                     count++;
                 }
