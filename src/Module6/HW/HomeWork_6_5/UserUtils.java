@@ -1,68 +1,135 @@
 package Module6.HW.HomeWork_6_5;
 
 
-
+import java.sql.Array;
+import java.util.Arrays;
 
 /**
  * Created by user on 30.11.2016.
  */
 public class UserUtils {
-    UserArray Users = new UserArray();
-
     public User[] uniqueUsers(User[] users) {
-        int elem = 0;
         int count = users.length;
-        int countBed = 0;
-        int x = 0;
-        int y = 0;
+        User userForDel = new User (-1,-1,-1);
+        int copyLenth;
+        int eleOfArra = 0;
 
         for (int firstLoop = 0; firstLoop < users.length ; firstLoop++) {
             for (int secondLoop = 0; secondLoop < users.length ; secondLoop++) {
-                if (users[firstLoop].equals(users[secondLoop]) && firstLoop != secondLoop) {
-                    users[secondLoop] = new User (1,1,1);
+                if (users[firstLoop].equals(users[secondLoop]) && firstLoop != secondLoop && firstLoop < secondLoop) {
+                    users[secondLoop] = userForDel ;
                     count--;
-                    countBed++;
-                    System.out.println(users[firstLoop].toString() + " index " + firstLoop);
                 }
             }
-
         }
-        for (User el : users){
-            System.out.println(el.toString());
+
+        copyLenth = users.length-count;
+        User[] copy = new User[copyLenth];
+
+
+        for ( int elemForCopy = 0; elemForCopy<copy.length;elemForCopy++){
+            if (!users[elemForCopy].equals(userForDel)){
+                copy[eleOfArra] = users[elemForCopy];
+                eleOfArra++;
+            }
         }
-        User[] copy = new User[count];
-        User[]  rightAr = new User[countBed];
-        System.out.println(copy.length);
-        System.out.println(countBed);
 
+        users = Arrays.copyOf(copy,copy.length);
 
-
-//        for (User e : copy){
-//            System.out.println(e.toString());
- //       }
-//        for (int firstLoop = 0; firstLoop < users.length - 1; firstLoop++) {
-//                if (users[firstLoop].equals(rightAr[firstLoop]) ) {
-//                    copy[y] = users[firstLoop];
-//                    System.out.println(copy[y].toString() + " index " + y);
-//
-//            }
-//        }
-
-//            for (int firstLoop = 0; firstLoop < users.length; firstLoop++) {
-//                for (int secondLoop = elem; secondLoop < users.length; secondLoop++) {
-//                    if (users[firstLoop].equals(users[secondLoop]) && firstLoop != secondLoop) {
-//                        System.out.println("nothing");
-//                    } else {
-//                        copy[firstLoop] = users[firstLoop];
-//                        System.out.println("index " + firstLoop + " with index " + secondLoop);
-//                    }
-//                }
-//                elem++;
-//
-//
-//
-//
-//            }
+        System.out.println("==========================================================\n");
+        System.out.println("afte method uniqueUsers user array looks like :");
+        for (User eleOfArr : users){
+            System.out.println(eleOfArr.toString());
+        }
+        System.out.println("==========================================================\n");
            return users;
     }
+
+    public User[] usersWithContitionalBalance(User[] users, int balance){
+        int countArr = 0;
+        int countForCopy = 0;
+        for (User elemOfArr : users){
+            if (elemOfArr.getBalace() == balance){
+                countArr++;
+            }
+        }
+        User[] copy = new User[countArr];
+        for (User elemOfArr : users){
+            if (elemOfArr.getBalace() == balance){
+                copy[countForCopy] = elemOfArr;
+                countForCopy++;
+            }
+        }
+        users = Arrays.copyOf(copy,copy.length);
+
+
+        System.out.println("==========================================================\n");
+        System.out.println("afte method usersWithContitionalBalance with balance - " + balance + " user array looks like :");
+        for (User eleOfArr : users){
+            System.out.println(eleOfArr.toString());
+        }
+        System.out.println("==========================================================\n");
+
+        return users;
+    }
+
+    final public User[] paySalaryToUsers(User[] users){
+        for (User elemOfArr : users){
+            elemOfArr.setSalary(elemOfArr.getSalary()+ elemOfArr.getSalary());
+        }
+        System.out.println("==========================================================\n");
+        System.out.println("afte method paySalaryToUsers users array of salsry looks like :");
+        for (User eleOfArr : users){
+            System.out.println(eleOfArr.getSalary());
+        }
+        System.out.println("==========================================================\n");
+        return users;
+    }
+
+
+    final public long[] getUsersId(User[] users){
+        long[] UsersId = new long[users.length];
+        int countForArr=0;
+        for (User elemOfArr : users){
+            UsersId[countForArr] = elemOfArr.getId();
+            countForArr++;
+        }
+        System.out.println("==========================================================\n");
+        System.out.println("afte method getUsersId getUserId array looks like :");
+        for (long eleOfArr : UsersId){
+            System.out.println(eleOfArr);
+        }
+        System.out.println("==========================================================\n");
+
+        return UsersId;
+    }
+    public User[] deleteEmptyUsers(User[] users){
+        int countForCopyL = 0;
+        int count = 0;
+        User[] copy;
+        for (User elemOfArr : users){
+            if (elemOfArr.equals(null)){
+                countForCopyL++;
+            }
+        }
+        copy = new User[users.length-countForCopyL];
+        for (User elemOfArr : users){
+            if (!elemOfArr.equals(null)){
+                copy[count] = elemOfArr;
+                count++;
+            }
+        }
+        users = Arrays.copyOf(copy,copy.length);
+
+        System.out.println("==========================================================\n");
+        System.out.println("afte method deleteEmptyUsers user array looks like :");
+        for (User eleOfArr : users){
+            System.out.println(eleOfArr.toString());
+        }
+        System.out.println("==========================================================\n");
+
+        return users;
+    }
+
+
 }
