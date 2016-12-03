@@ -10,14 +10,12 @@ import java.util.Arrays;
 public class UserUtils {
     public User[] uniqueUsers(User[] users) {
         int count = users.length;
-        User userForDel = new User (-1,-1,-1);
         int copyLenth;
         int eleOfArra = 0;
 
         for (int firstLoop = 0; firstLoop < users.length ; firstLoop++) {
             for (int secondLoop = 0; secondLoop < users.length ; secondLoop++) {
                 if (users[firstLoop].equals(users[secondLoop]) && firstLoop != secondLoop && firstLoop < secondLoop) {
-                    users[secondLoop] = userForDel ;
                     count--;
                 }
             }
@@ -27,12 +25,12 @@ public class UserUtils {
         User[] copy = new User[copyLenth];
 
 
-        for ( int elemForCopy = 0; elemForCopy<copy.length;elemForCopy++){
-            if (!users[elemForCopy].equals(userForDel)){
-                copy[eleOfArra] = users[elemForCopy];
+        for ( int elemForCopy = 0; elemForCopy<users.length;elemForCopy++){
+            if (users[elemForCopy].findUser(users, elemForCopy )){continue;}
+            else{    copy[eleOfArra] = users[elemForCopy];}
                 eleOfArra++;
             }
-        }
+
 
         users = Arrays.copyOf(copy,copy.length);
 

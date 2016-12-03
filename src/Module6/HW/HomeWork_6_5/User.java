@@ -8,6 +8,16 @@ public class User {
     private int id;
     private int salary;
 
+    public boolean findUser(User[] user, int index){
+        boolean ArrBoolean = false;
+        for (int count = 0; count<user.length; count++){
+            if (user[index].equals(user[count]) && index != count && index < count){
+                ArrBoolean = true;
+                continue;
+            }
+        }
+        return ArrBoolean;
+    }
 
 
     public User(int balace, int id, int salary) {
