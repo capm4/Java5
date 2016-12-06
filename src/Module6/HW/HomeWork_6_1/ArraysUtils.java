@@ -68,14 +68,16 @@ public final class ArraysUtils {
     }
 
     public final static int[] findEvenElements(int[] array){
+        int [] seargEvEl= new int [array.length];
+        int indexTo = 0;
         for (int index = 0; index < array.length-1; index++ ){
             if (array[index]%2 == 0) {
-                System.out.println("Elemen of array " + (index+1) + " is even ");
+                seargEvEl[indexTo] = array[index];
+                indexTo++;
             }
-
-         elemForfindEvEle++;
         }
-        return array;
+        int [] findEvenElements = Arrays.copyOfRange(seargEvEl,0,indexTo);
+        return findEvenElements;
    }
 
 }

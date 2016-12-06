@@ -7,23 +7,32 @@ public class User {
     private int balace;
     private int id;
     private int salary;
-
-    public boolean findUser(User[] user, int index){
-        boolean ArrBoolean = false;
-        for (int count = 0; count<user.length; count++){
-            if (user[index].equals(user[count]) && index != count && index < count){
-                ArrBoolean = true;
-                continue;
-            }
-        }
-        return ArrBoolean;
-    }
+    private String firstName;
+    private String lastName;
 
 
-    public User(int balace, int id, int salary) {
+    public User(int balace, int id, int salary, String firstName, String lastName) {
         this.balace = balace;
         this.id = id;
         this.salary = salary;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getBalace() {
@@ -59,7 +68,9 @@ public class User {
 
         if (balace != user.balace) return false;
         if (id != user.id) return false;
-        return salary == user.salary;
+        if (salary != user.salary) return false;
+        if (!firstName.equals(user.firstName)) return false;
+        return lastName.equals(user.lastName);
 
     }
 
@@ -68,6 +79,8 @@ public class User {
         int result = balace;
         result = 31 * result + id;
         result = 31 * result + salary;
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
         return result;
     }
 
@@ -77,6 +90,8 @@ public class User {
                 "balace=" + balace +
                 ", id=" + id +
                 ", salary=" + salary +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 '}';
     }
 }

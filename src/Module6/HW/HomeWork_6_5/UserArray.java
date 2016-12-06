@@ -8,11 +8,11 @@ import java.util.Arrays;
 public class UserArray {
     User[] users = new User[5];
     public UserArray(){
-        this.users[0] = new User(1000, 1, 100);
-        this.users[1] = new User(2000, 2, 200);
-        this.users[2] = new User(3000, 3, 300);
-        this.users[3] = new User(3000, 3, 300);
-        this.users[4] = new User(3000, 3, 300);
+        this.users[0] = new User(1000, 1, 100, "Olga", "Ivanovna");
+        this.users[1] = new User(2000, 2, 200, "Ivan", "Koshun");
+        this.users[2] = new User(3000, 3, 300, "Igor", "Pul");
+        this.users[3] = new User(3000, 3, 300, "Igor", "Pul");
+        this.users[4] = new User(3000, 3, 300, "Igor", "Pul");
     }
 
     public User[] getUsers() {
