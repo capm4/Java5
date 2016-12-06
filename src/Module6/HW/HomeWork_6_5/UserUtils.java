@@ -16,9 +16,7 @@ public class UserUtils {
             for (int secondLoop = 0; secondLoop <= users.length-1; secondLoop++) {
                 if (users[firstLoop]!= null && users[firstLoop].equals(users[secondLoop]) && firstLoop < secondLoop && firstLoop != secondLoop)  {
                     count++;
-                    System.out.println(users[firstLoop]);
                     users[secondLoop] = null;
-                    System.out.println(users[secondLoop] + " " + secondLoop);
 
                 }
             }
