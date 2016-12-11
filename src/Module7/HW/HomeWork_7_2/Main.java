@@ -6,6 +6,7 @@ import Module7.HW.HomeWork_7_1.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static Module7.HW.HomeWork_7_1.ArraysUtils.*;
@@ -28,27 +29,36 @@ public class Main {
         User Oksana = new User(10, "Oksana", "Mizera", "London", 1500);
 
         //greats Orders
-        ArrayList<Order> orderList = new ArrayList<Order>();
-            orderList.add(new Order(1,100, Currency.USD, "Banan", "111", Ivan));
-            orderList.add(new Order(2,200,Currency.UAH, "Apple", "222", Oleg));
-            orderList.add(new Order(3,300,Currency.USD, "Bear", "111", Max));
-            orderList.add(new Order(4,1500,Currency.USD, "Bread", "333", Andriy));
-            orderList.add(new Order(5,200,Currency.EUR, "Bread", "444", Violeta));
-            orderList.add(new Order(6,400,Currency.EUR, "Bear", "111", Oleksiy));
-            orderList.add(new Order(7,100,Currency.EUR, "Apple", "333", Taras));
-            orderList.add(new Order(8,200,Currency.EUR, "Banan", "222", Petro));
-            orderList.add(new Order(9,400,Currency.UAH, "Bear", "444", Vita));
-            orderList.add(new Order(1,100,Currency.USD, "Banan", "111", Ivan));
+        ArrayList<Order> orderList = new ArrayList<>();
 
+        orderList.add(new Order(1,100, Currency.USD, "Banan", "111", Ivan));
+        orderList.add(new Order(2,200,Currency.UAH, "Apple", "222", Oleg));
+        orderList.add(new Order(3,300,Currency.USD, "Bear", "111", Max));
+        orderList.add(new Order(4,1500,Currency.USD, "Bread", "333", Andriy));
+        orderList.add(new Order(5,200,Currency.EUR, "Bread", "444", Violeta));
+        orderList.add(new Order(6,400,Currency.EUR, "Bear", "111", Oleksiy));
+        orderList.add(new Order(7,100,Currency.EUR, "Apple", "333", Taras));
+        orderList.add(new Order(8,200,Currency.EUR, "Banan", "222", Petro));
+        orderList.add(new Order(9,400,Currency.UAH, "Bear", "444", Vita));
+        orderList.add(new Order(1,100,Currency.USD, "Banan", "111", Ivan));
         //sort list by Order price in decrease order
-        //Collections.sort(orderList,sortPrise);
+        //Variant 1
+        Collections.sort(orderList,new SortPrice());
+        //Variant 2
+        orderList.sort(Comparator.comparing(Order::getPrice).reversed());
+
 
         //sort list by Order price in increase order AND User city
-        //Collections.sort(orderList, sortPriseAndCity);
+        //Variant 1
+        Collections.sort(orderList, new SortPriseAndCity());
+        //Variant 2
+        orderList.sort(Comparator.comparing(Order::getPrice).thenComparing((order1, order2) -> order1.getUser().getCity().compareTo(order2.getUser().getCity())));
 
         //sort list by Order itemName AND ShopIdentificator AND User city
-        //Collections.sort(orderList, sortitemNameANDShopIndANDCity);
-
+        //Variant 1
+        Collections.sort(orderList, new SortitemNameANDShopIndANDCity());
+        //Variant 2
+        orderList.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator).thenComparing((order1, order2)-> order1.getUser().getCity().compareTo(order2.getUser().getCity())));
 
         //delete duplicates from the list
         //deleteDupl(orderList);
@@ -61,7 +71,8 @@ public class Main {
         //separateUSDandUAH(orderList);
 
         //separate list for as many lists as many unique cities are in User
-        separateCity(orderList);
+        //separateCity(orderList);
+
 
 //        for(Order counter: orderList){
 //            System.out.println(counter);

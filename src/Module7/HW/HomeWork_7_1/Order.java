@@ -1,11 +1,13 @@
 package Module7.HW.HomeWork_7_1;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.TreeSet;
 
 /**
  * Created by user on 04.12.2016.
  */
-public class Order {
+public class Order implements Comparable<Order>{
     private long id;
     private int price;
     private Currency currency;
@@ -21,6 +23,11 @@ public class Order {
         this.itemName = itemName;
         this.shopIdentificator = shopIdentificator;
         this.user = user;
+    }
+
+    @Override
+    public int compareTo(Order o) {
+            return 1;
     }
     @Override
     public String toString() {
@@ -40,7 +47,6 @@ public class Order {
 
         Order order = (Order) o;
 
-        if (id != order.id) return false;
         if (price != order.price) return false;
         if (currency != order.currency) return false;
         if (!itemName.equals(order.itemName)) return false;
@@ -51,8 +57,7 @@ public class Order {
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + price;
+        int result = price;
         result = 31 * result + currency.hashCode();
         result = 31 * result + itemName.hashCode();
         result = 31 * result + shopIdentificator.hashCode();
@@ -107,4 +112,15 @@ public class Order {
     public void setUser(User user) {
         this.user = user;
     }
+
+
+//    @Override
+//    public Iterator<Order> iterator(TreeSet<Order> a) {
+//        for (Order elemOfAr : a){
+//            if (elemOfAr.getCurrency().equals(Currency.USD)){
+//                a.remove(elemOfAr);
+//            }
+//        }
+//        return new OrderIterator (this);
+//    }
 }
