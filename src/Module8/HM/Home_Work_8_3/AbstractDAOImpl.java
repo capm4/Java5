@@ -1,14 +1,14 @@
 package Module8.HM.Home_Work_8_3;
 
 import Module8.HM.Home_Work_8_1.AbstractDAO;
+import Module8.HM.Home_Work_8_4.User;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by user on 15.12.2016.
  */
-public class AbstractDAOImpl<T> implements AbstractDAO <T> {
+public abstract class AbstractDAOImpl<T> implements AbstractDAO <T> {
     List<T> list;
 
     @Override
@@ -39,13 +39,11 @@ public class AbstractDAOImpl<T> implements AbstractDAO <T> {
 
     @Override
     public void daleteById(long id) {
-        list.remove(id);
+
     }
 
     @Override
     public T get(long id) {
-        Integer s = Math.toIntExact(id);
-        list.get(s);
         return null;
     }
 }
