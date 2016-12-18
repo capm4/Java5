@@ -1,15 +1,15 @@
 package Module8.HM.Home_Work_8_3;
 
+
 import Module8.HM.Home_Work_8_1.AbstractDAO;
-import Module8.HM.Home_Work_8_4.User;
 
 import java.util.*;
 
 /**
  * Created by user on 15.12.2016.
  */
-public abstract class AbstractDAOImpl<T> implements AbstractDAO <T> {
-    List<T> list;
+public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
+    List<T> list = new ArrayList<T>();
 
     @Override
     public T save(T t) {
@@ -38,7 +38,7 @@ public abstract class AbstractDAOImpl<T> implements AbstractDAO <T> {
     }
 
     @Override
-    public void daleteById(long id) {
+    public void deleteById(long id) {
 
     }
 
@@ -47,3 +47,6 @@ public abstract class AbstractDAOImpl<T> implements AbstractDAO <T> {
         return null;
     }
 }
+
+
+

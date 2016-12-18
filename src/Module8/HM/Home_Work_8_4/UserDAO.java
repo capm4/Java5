@@ -10,39 +10,53 @@ import java.util.List;
  * Created by user on 15.12.2016.
  */
 public class UserDAO extends AbstractDAOImpl {
-    List<User> user = new ArrayList<>();
+    List<User> list = getList();
 
-    User save(User user) {
-        return save(user);
+    User save(User us) {
+        save(us);
+        return us;
     }
 
-    User delete(User user) {
-        delete(user);
-        return user;
+    @Override
+    public void delete(Object o) {
+        super.delete(o);
     }
-    User deleteAll(User user){
-        deleteAll(user);
-        return user;
+
+    @Override
+    public void deleteAll(List T) {
+        super.deleteAll(T);
     }
-    User saveAll(User user){
-        saveAll(user);
-        return user;
+
+    @Override
+    public void saveAll(List T) {
+        super.saveAll(T);
     }
-    public List getList(){
-        return getList();
+
+    @Override
+    public List getList() {
+        return super.getList();
     }
-    public void daleteById(long id){
-        user.remove(getId(id));
+
+    @Override
+    public void deleteById(long id) {
+        list.remove(get(id));
     }
-    User  getId(long id){
-        Iterator<User> it = user.iterator();
+
+    @Override
+    public User get(long id) {
+        Iterator<User> it = list.iterator();
         User res = null;
         while (it.hasNext()) {
-            if (it.next().getId()==id) {
-                res = (User) it;
+            if (it.next().getId()== id) {
+                res = it.next();
                 break;
             }
         }
         return res;
+    }
+
+    @Override
+    public String toString() {
+        return "user=" +list;
     }
 }

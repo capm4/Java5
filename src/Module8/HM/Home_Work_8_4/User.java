@@ -3,9 +3,17 @@ package Module8.HM.Home_Work_8_4;
 /**
  * Created by user on 15.12.2016.
  */
-public class User extends AbstractEntity {
+public class User {
     long id;
     String name;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
     public User(long id, String name) {
         this.id = id;
@@ -46,4 +54,5 @@ public class User extends AbstractEntity {
     public void setName(String name) {
         this.name = name;
     }
+
 }
