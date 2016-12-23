@@ -10,7 +10,7 @@ public class SpecialStudent extends CollegeStugent {
         super(firstName, lastName, group);
     }
 
-    public SpecialStudent(String lastName, Course[] courses) {
+    public SpecialStudent(String lastName, Course... courses) {
         super(lastName, courses);
     }
 

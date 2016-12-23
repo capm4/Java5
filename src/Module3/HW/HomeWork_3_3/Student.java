@@ -14,7 +14,7 @@ public class Student {
         this.group = group;
     }
 
-    public Student(String lastName,Course[] courses) {
+    public Student(String lastName,Course... courses) {
         this.lastName = lastName;
         System.arraycopy(courses,0,courseTaken,0,3);
     }
