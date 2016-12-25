@@ -35,36 +35,35 @@ public class main {
         orderList.add(new Order(8,200,Currency.EUR, "Banan", "222", Petro));
         orderList.add(new Order(9,400,Currency.UAH, "Bear", "444", Vita));
         orderList.add(new Order(1,100,Currency.USD, "Banan", "111", Ivan));
-        ArraysUtils Util = new ArraysUtils();
 
         System.out.println("Отсортируйте список за ценой заказа по убыванию\n");
-        Util.sortByPrizeDegres(orderList);
+        ArraysUtils.sortByPrizeDegres(orderList);
         orderList.stream().forEach((p)-> System.out.println(p));
 
         System.out.println("\nОтсортируйте список за ценой заказа по возрастанию и за городом пользователя\n");
-        Util.sortByPrizeAndCity(orderList);
+        ArraysUtils.sortByPrizeAndCity(orderList);
         orderList.stream().forEach((p)-> System.out.println(p));
 
         System.out.println("\n отсортируйте список за наименованием товара, идентификатором заказа, и городом пользователя \n");
-        Util.sortByItemIdenAndCity(orderList);
+        ArraysUtils.sortByItemIdenAndCity(orderList);
         orderList.stream().forEach((p) -> System.out.println(p));
 
         System.out.println("\nудалите дублированные данные со списка\n");
-        Util.delDublicate(orderList);
+        ArraysUtils.delDublicate(orderList);
 
         System.out.println("\nудалите объекты, где цена меньше 1500\n");
-        Util.delPrize1500(orderList);
+        ArraysUtils.delPrize1500(orderList);
 
         System.out.println("\nразделите список на 2 списка - заказы в долларах и в гривнах\n");
-        Util.sortUSDandUAH(orderList);
+        ArraysUtils.sortUSDandUAH(orderList);
 
         System.out.println("\nразделите список на столько списков, сколько уникальных городов в User\n");
-       Util.listOfCity(orderList);
+        ArraysUtils.listOfCity(orderList);
 
         System.out.println("\nпроверьте, содержит ли сет заказ, где фамилия пользователя - “Petrov”\n");
-        Util.orderPetrov(orderList);
+        ArraysUtils.orderPetrov(orderList);
 
         System.out.println("\nудалите заказы в USD\n");
-        Util.delUSD(orderList);
+        ArraysUtils.delUSD(orderList);
     }
 }
