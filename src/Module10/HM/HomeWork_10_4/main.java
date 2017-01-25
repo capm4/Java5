@@ -6,7 +6,7 @@ package Module10.HM.HomeWork_10_4;
  */
 public class main {
     public static void main(String[] args) {
-        classForMethod tryMetod = new classForMethod();
+        ClassForMethod tryMetod = new ClassForMethod();
         tryMetod.f();
     }
 }

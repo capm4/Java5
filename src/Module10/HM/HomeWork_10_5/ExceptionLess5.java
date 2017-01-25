@@ -3,10 +3,10 @@ package Module10.HM.HomeWork_10_5;
 /**
  * Created by user on 30.12.2016.
  */
-public class exceptionLess5 extends Exception {
-    Integer integer;
+public class ExceptionLess5 extends Exception {
+    private Integer integer;
 
-    public exceptionLess5(Integer integer) {
+    protected ExceptionLess5(Integer integer) {
         this.integer = integer;
     }
 

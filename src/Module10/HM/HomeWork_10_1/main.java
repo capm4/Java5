@@ -5,9 +5,10 @@ package Module10.HM.HomeWork_10_1;
  */
 public class main {
     public static void main(String[] args) {
+        String text = "Start the try";
         try{
-            System.out.println("Start the try");
-            if (true) {
+            System.out.println(text);
+            if (text.equals("Start the try")) {
                 throw new Exception();
             }
         }catch (Exception e){
